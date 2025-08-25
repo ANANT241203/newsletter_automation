@@ -6,12 +6,22 @@ import pandas as pd
 import requests
 from io import BytesIO
 
-# Use credentials from the existing script
+import os
+from mailchimp_marketing import Client
+from dotenv import load_dotenv
+
+# load values from .env into the environment
+load_dotenv()
+
+MAILCHIMP_API_KEY = os.getenv("MAILCHIMP_API_KEY")
+MAILCHIMP_SERVER_PREFIX = os.getenv("MAILCHIMP_SERVER_PREFIX", "us6")
+
 mailchimp = Client()
 mailchimp.set_config({
-    "api_key": "aa90f697f32e710c03320a2758f209f5-us6",
-    "server": "us6"
+    "api_key": MAILCHIMP_API_KEY,
+    "server": MAILCHIMP_SERVER_PREFIX,
 })
+
 
 def update_newsletter_design_from_excel(excel_url):
     """

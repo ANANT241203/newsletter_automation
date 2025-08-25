@@ -12,10 +12,13 @@ from extract_excel import get_first_30_rows_from_excel
 
 from mailchimp_marketing.api_client import ApiClientError
 
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Configure Mailchimp client (reuse config style from existing scripts)
-MAILCHIMP_API_KEY = os.getenv("MAILCHIMP_API_KEY", "aa90f697f32e710c03320a2758f209f5-us6")
-MAILCHIMP_SERVER_PREFIX = os.getenv("MAILCHIMP_SERVER_PREFIX", "us6")
+MAILCHIMP_API_KEY = os.getenv("MAILCHIMP_API_KEY")
+MAILCHIMP_SERVER_PREFIX = os.getenv("MAILCHIMP_SERVER_PREFIX")
 
 mailchimp = Client()
 mailchimp.set_config({
