@@ -1,0 +1,4 @@
+Starting GAPSA newsletter automation (replicate + update + schedule)...
+Success. New campaign id: 68f7f53224
+A copy of the final HTML was pushed to Mailchimp and the campaign was scheduled for 9:00 AM ET tomorrow.
+See artifacts/ for any saved HTML or logs.
